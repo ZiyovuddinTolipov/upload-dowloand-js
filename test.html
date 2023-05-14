@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>API Request Example</title>
+</head>
+
+<body>
+    <button onclick="downloadFile()">Download File</button>
+
+    <script>
+        const fileUrl = "https://onlinemarketshop.pythonanywhere.com/doc/Noname"; // Replace with the URL of the file you want to download
+        const fileName = "file"; // Replace with the name you want to save the file as
+
+
+        function downloadFile() {
+            fetch(fileUrl)
+                .then(response => {
+                    if (response.status === 200) {
+                        const contentType = response.headers.get("content-type");
+                        const fileExtension = contentType.split("/")[1];
+                        const fileFullName = fileName + "." + fileExtension;
+                        if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx") {
+                            response.blob().then(blob => {
+                                const url = window.URL.createObjectURL(blob);
+                                const a = document.createElement("a");
+                                a.href = url;
+                                a.download = fileFullName;
+                                document.body.appendChild(a);
+                                a.click();
+                                a.remove();
+                            });
+                        } else {
+                            console.error("Invalid file extension: " + fileExtension);
+                        }
+                    } else {
+                        console.error("File not found or other error occurred. Response status: " + response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error("An error occurred while downloading the file:", error);
+                });
+        }
+    </script>
+</body>
+
+</html>

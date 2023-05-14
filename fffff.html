@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kiritilgan malumot</title>
+</head>
+
+<body>
+    <form id="zt">
+        <label for="malumot">Malumotingizni kiriting:</label><br>
+        <input type="text" id="malumot"><br>
+        <button onclick="downloadFile()">Kun.uz-da ko'rish</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("form");
+
+        // const url = 'http://onlinemarketshop.pythonanywhere.com/doc/ssss'; // Yuklab olish uchun linkni belgilash
+
+        // function kunUzManziligaOtdirish() {
+        //     fetch(downloadLink)
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Fayl topilmadi');
+        //             }
+        //             return response.blob();
+        //         })
+        //         .then(blob => {
+        //             if (blob.size === 0) {
+        //                 throw new Error('Fayl bo\'sh');
+        //             }
+        //             const url = window.URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }));
+        //             const link = document.createElement('a');
+        //             link.href = url;
+        //             link.setAttribute('download', '');
+        //             document.body.appendChild(link);
+        //             link.click();
+        //             link.parentNode.removeChild(link);
+        //         })
+        //         .catch(error => {
+        //             console.error('Xatolik:', error);
+        //         });
+
+        // };
+        form.addEventListener('submit',() => {})
+        function downloadFile(url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.blob();
+                })
+                .then(blob => {
+                    const filename = getFilenameFromUrl(url);
+                    const a = document.createElement('a');
+                    const url = window.URL.createObjectURL(blob);
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                    }, 0);
+                })
+                .catch(error => {
+                    console.error('Xatolik:', error);
+                    alert('Fayil yuklashda xatolik yuz berdi');
+                });
+        }
+
+        function getFilenameFromUrl(url) {
+            const match = url.match(/\/([^/]+)$/);
+            return match ? match[1] : 'unknown';
+        }
+
+        // Fayil url sini belgilash
+        const fileUrl = 'http://onlinemarketshop.pythonanywhere.com/doc/Noname';
+
+        // Fayilni yuklash
+        downloadFile(fileUrl);
+
+
+    </script>
+</body>
+
+</html>

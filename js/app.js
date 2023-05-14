@@ -16,7 +16,7 @@ form.addEventListener('submit', event => {
             } 
             else if (response.status === 200) {
                 window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`; 
-                alert('Fayl yuklab olindi');
+                alert('Файл загружен!!!');
                 location.reload(); 
             } else if (response.status === 404){
                 console.log('erorr');
@@ -26,7 +26,7 @@ form.addEventListener('submit', event => {
         )
     
         .catch(error => {
-            console.error('Yuklab olishda muammo yuz berdi:', error);
+            console.error('При загрузке возникла проблема:', error);
         });
 });
 

@@ -175,7 +175,7 @@
 
             formData.append('file', fileInput.files[0]);
             formData.append('text', keyInput.value);
-            console.log(keyInput.value);
+            // console.log(keyInput.value);
 
             fetch(`https://onlinemarketshop.pythonanywhere.com/upload/${keyInput.value}`, {
                 method: 'POST',

@@ -15,7 +15,9 @@ form.addEventListener('submit', event => {
                 throw new Error('Ulanishda muammo');
             } 
             else if (response.status === 200) {
-                window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;  
+                window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`; 
+                alert('Fayl yuklab olindi');
+                location.reload(); 
             } else if (response.status === 404){
                 console.log('erorr');
             }

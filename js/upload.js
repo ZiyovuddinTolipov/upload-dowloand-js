@@ -17,6 +17,7 @@ form.addEventListener('submit', event => {
     })
         .then(response  => response.json())
         .then(response => {
+          
             if ( response.success == true ) {
                 alert('Yuklandi')
                 keyInput.style.borderColor = ' #ddd';

@@ -625,3 +625,6 @@ a.desc:after {
         padding: 0 15px;
     }
 }
+.err-text {
+    display: none;
+}

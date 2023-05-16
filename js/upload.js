@@ -18,12 +18,15 @@ form.addEventListener('submit', event => {
     })
         .then(response => {
             // handle response
-            alert('Fayl yuklandi');
-        location.reload();
-        // alert('Fayl yuklandi')
+            console.log(response.status);
+            // alert('Fayl yuklandi');
+        // location.reload();
         })
         .catch(error => {
+            // alert('Error: ' + error.message)
             // handle error
+            console.log(error);
+            
             console.error('Fayl yuklanmadi' + error.message)
         });
 });

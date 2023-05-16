@@ -20,6 +20,7 @@ form.addEventListener('submit', event => {
                 location.reload(); 
             } else if (response.status === 404){
                 console.log('erorr');
+                 
             }
         }
 

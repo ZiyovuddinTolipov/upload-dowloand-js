@@ -8,25 +8,29 @@ form.addEventListener('submit', event => {
 
     const formData = new FormData();
 
-    formData.append('file', fileInput.files[0]);
-    formData.append('text', keyInput.value);
+    // formData.append('file', fileInput.files[0]);
+    // formData.append('text', keyInput.value);
     // console.log(keyInput.value);
 
     fetch(`https://onlinemarketshop.pythonanywhere.com/upload/${keyInput.value}`, {
         method: 'POST',
         body: formData
     })
+        // .then(response  => response.json())
         .then(response => {
             // handle response
-            console.log(response.status);
+            console.log(response.json());
             // alert('Fayl yuklandi');
-        // location.reload();
+            // location.reload();
+
+            formData.append('file', fileInput.files[0]);
+            formData.append('text', keyInput.value);
         })
         .catch(error => {
             // alert('Error: ' + error.message)
             // handle error
             console.log(error);
-            
+
             console.error('Fayl yuklanmadi' + error.message)
         });
 });
@@ -37,7 +41,7 @@ let span = document.getElementById('upload');
 fileInputName.addEventListener('change', function (event) {
 
     // Get file name
-    let fileName = fileInputName.files[0].name.slice(0,10);
+    let fileName = fileInputName.files[0].name.slice(0, 10);
     console.log(fileName);
 
     // Update file name in span

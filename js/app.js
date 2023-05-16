@@ -8,7 +8,7 @@ form.addEventListener('submit', event => {
 
     fetch(`https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`)
         .then(response => {
-            console.log(response.status);
+            console.log(response.json());
             const contentType = response.headers.get('content-type').split('/')[1];
             console.log(contentType);
             if (!response.ok ) {

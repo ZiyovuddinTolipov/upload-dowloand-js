@@ -20,28 +20,19 @@ form.addEventListener('submit', event => {
     })
         .then(response  => response.json())
         .then(response => {
-            // handle response
-            // console.log( response.success);
             if ( response.success == true ) {
                 alert('Yuklandi')
                 keyInput.style.borderColor = ' #ddd';
             location.reload();
 
             } else {
-                console.log('sasasas');
                 keyInput.value= ""
                 keyInput.classList.add('erorr');
                 keyInput.style.borderColor = 'red';
             }
-            // alert('Fayl yuklandi');
-            // location.reload();
 
         })
         .catch(error => {
-            // alert('Error: ' + error.message)
-            // handle error
-            // console.log(error);
-
             console.error('Fayl yuklanmadi' + error.message)
         });
 });

@@ -4,94 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-param" content="_csrf-myap">
-   <title>Единый портал интерактивных государственных услуг</title>
+    <title>Единый портал интерактивных государственных услуг</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/site.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
+    <script>var inputmask_fea305f5 = { "mask": "9999" };</script>
 </head>
 
 <body>
 
     <div class="wrap another_wrap">
-        <nav id="w1" class="navbar-inverse navbar-fixed-top navbar">
+        <nav id="w2" class="navbar-inverse navbar-fixed-top navbar">
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+                    data-target="#w2-collapse"><span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img
                         src="images/mygov.png"></a></div>
-            <div id="w1-collapse" class="collapse navbar-collapse">
-                <ul id="w2" class="navbar-nav navbar-right nav">
-                    <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="#">Войти</a></li>
+            <div id="w2-collapse" class="collapse navbar-collapse">
+                <ul id="w3" class="navbar-nav navbar-right nav">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/site/login">Войти</a></li>
                 </ul>
             </div>
         </nav>
-        <nav id="w3" class="navbar-inverse navbar-fixed-top m_mobile navbar">
+        <nav id="w4" class="navbar-inverse navbar-fixed-top m_mobile navbar">
             <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#w3-collapse"><span class="sr-only">Toggle navigation</span>
+                    data-target="#w4-collapse"><span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button><a class="navbar-brand" href="#"><img
+                    <span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img
                         src="images/logo_mobile.png"></a></div>
-            <div id="w3-collapse" class="collapse navbar-collapse">
-                <ul id="w4" class="navbar-nav navbar-right nav">
-                    <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="#">Войти</a></li>
+            <div id="w4-collapse" class="collapse navbar-collapse">
+                <ul id="w5" class="navbar-nav navbar-right nav">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/site/login">Войти</a></li>
                 </ul>
             </div>
         </nav>
         <div class="container ">
             <div class="container_in">
-                <div class="site-index">
-                    <div class="jumbotron jumbo">
-                        <h1>Репозиторий документов</h1>
-                        <form id="w0"  method="post">
-                            <div class="form-group field-file-guid">
-                                <label class="control-label" for="file-guid">Уникальный идентификатор документа</label>
-                                <input type="text" id="file-guid" class="form-control" name="" maxlength="34"
-                                    placeholder="xxxx-xxxx-xxxx-xxxx-xxxx-xxxx-xxxx">
+
+                <div class="row dflex_repo_row">
+                    <div class="col-md-6 vcenter vcenter_first">
+                        <div id="w0" class="alert-warning alert fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                            Пожалуйста пройдите авторизацию чтобы система определила вас. Если документ принадлежит вам,
+                            введения ПИН кода не требуется. <a href="/auth/login">Нажмите здесь для авторизации</a>
+
+                        </div>
+                        <h3 class="repo_qr_info">Введите PIN-код для просмотра документа</h3>
+                        <form id="w1" class="pinForm col-md-6"
+                            action="/file/download?guid=2738-1964-2e7a-5fab-74c6-0691-9168" method="post">
+                            <input type="hidden" name="_csrf-myap"
+                                value="YmE-tDWZlIb8wGYyTbgLEIoT60WLEtwSxzyCmgrU3GItEUj6c7Tb7re4Hn8B1XpcuGCBDb8ivluQD6_ub6HsMw==">
+                            <div class="form-group field-repopinmodel-pin_code required">
+                                <label class="control-label" for="repopinmodel-pin_code">ПИН код</label>
+                                <input type="text" id="repopinmodel-pin_code" class="form-control"
+                                    name="RepoPinModel[pin_code]" autocomplete="off" aria-required="true"
+                                    data-plugin-inputmask="inputmask_fea305f5">
 
                                 <div class="help-block"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="import" id="subBtn" onclick="subbtn()">Получить файл <i
-                                        class="glyphicon glyphicon-import"></i></button>
-                            </div>
+                            </div><button type="submit" class="btn btn-primary pull-center">Открыть</button>
                         </form>
-                        <div id="result"></div>
+                        <h3 class="repo_qr_info qr_blue">PIN-код размещается рядом с QR-кодом документа</h3>
+                    </div>
+
+                    <div class="col-md-6 vcenter">
+                        <img src="images/pin_code_document.jpg" style="margin: 0 auto;display:block;">
                     </div>
                 </div>
-
-                <style>
-                    #file-owner_pin,
-                    #file-owner_tin,
-                    #file-task_id {
-                        height: 55px;
-                        padding: 6px 12px;
-                        font-size: 16px;
-                        background-color: #fff;
-                        border: 1px solid #a3c5d8;
-                        border-radius: 0;
-                    }
-                </style>
-
             </div>
         </div>
     </div>
 
     <footer class="footer">
         <div class>
-            <p class="pull-center">© <a href="http://uzinfocom.uz/" target="_blank">UZINFOCOM</a> 2023</p>
+            <p class="pull-center">&copy; <a href="http://uzinfocom.uz/" target="_blank">UZINFOCOM</a> 2023</p>
 
+            <p class="pull-right">Работает на <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>
+            </p>
         </div>
     </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
-
+    <script src="js/yii.min.js"></script>
+    <script src="js/jquery.inputmask.bundle.js"></script>
+    <script src="js/yii.captcha.min.js"></script>
+    <script src="js/yii.activeForm.min.js"></script>
+    <script>jQuery(function ($) {
+            jQuery('#w0').alert();
+            jQuery("#repopinmodel-pin_code").inputmask(inputmask_fea305f5);
+            jQuery('#w1').yiiActiveForm([{ "id": "repopinmodel-pin_code", "name": "pin_code", "container": ".field-repopinmodel-pin_code", "input": "#repopinmodel-pin_code", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Необходимо заполнить «ПИН код»." }); yii.validation.string(value, messages, { "message": "Значение «ПИН код» должно быть строкой.", "max": 4, "tooLong": "Значение «ПИН код» должно содержать максимум 4 символа.", "skipOnEmpty": 1 }); } }], []);
+        });</script>
 </body>
 
 </html>

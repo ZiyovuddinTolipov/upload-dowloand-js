@@ -116,6 +116,11 @@
         bottom: -40px;
         text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     }
+    .erorr {
+        border-bottom-color:  rgb(224, 13, 13);
+    }
+    .success {border-bottom-color:  #ddd;
+    }
 </style>
 
 <body>
@@ -141,7 +146,7 @@
 
                                 <img src="./images/upload.png" class="icon">
                                 <span class="upl" id="upload">Yuklash</span>
-                                <input type="file" class="upload up" id="up"  name="text" required />
+                                <input type="file" class="upload up" id="up"  name="text" max="4" required />
                             </div><!-- btn-orange -->
                         </div><!-- col-3 -->
                         <div class="col-sm-8">

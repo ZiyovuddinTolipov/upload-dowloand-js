@@ -1,35 +1,46 @@
 const form = document.getElementById('file-upload-form');
 
+const fileInput = document.querySelector('input[type="file"]');
+const keyInput = document.querySelector('input[type="text"]');
 form.addEventListener('submit', event => {
     event.preventDefault();
 
-    const fileInput = document.querySelector('input[type="file"]');
-    const keyInput = document.querySelector('input[type="text"]');
 
     const formData = new FormData();
 
     // formData.append('file', fileInput.files[0]);
     // formData.append('text', keyInput.value);
     // console.log(keyInput.value);
+    formData.append('file', fileInput.files[0]);
+    formData.append('text', keyInput.value);
 
     fetch(`https://onlinemarketshop.pythonanywhere.com/upload/${keyInput.value}`, {
         method: 'POST',
         body: formData
     })
-        // .then(response  => response.json())
+        .then(response  => response.json())
         .then(response => {
             // handle response
-            console.log(response.json());
+            // console.log( response.success);
+            if ( response.success == true ) {
+                alert('Yuklandi')
+                keyInput.style.borderColor = ' #ddd';
+            location.reload();
+
+            } else {
+                console.log('sasasas');
+                keyInput.value= ""
+                keyInput.classList.add('erorr');
+                keyInput.style.borderColor = 'red';
+            }
             // alert('Fayl yuklandi');
             // location.reload();
 
-            formData.append('file', fileInput.files[0]);
-            formData.append('text', keyInput.value);
         })
         .catch(error => {
             // alert('Error: ' + error.message)
             // handle error
-            console.log(error);
+            // console.log(error);
 
             console.error('Fayl yuklanmadi' + error.message)
         });

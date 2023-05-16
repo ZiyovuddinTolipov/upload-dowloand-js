@@ -8,9 +8,6 @@ form.addEventListener('submit', event => {
 
     const formData = new FormData();
 
-    // formData.append('file', fileInput.files[0]);
-    // formData.append('text', keyInput.value);
-    // console.log(keyInput.value);
     formData.append('file', fileInput.files[0]);
     formData.append('text', keyInput.value);
 
@@ -49,4 +46,26 @@ fileInputName.addEventListener('change', function (event) {
     // Update file name in span
     span.innerText = fileName;
 
+
+    
+  fileInput.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    
+    for (let i = 0; i < fileList.length; i++) {
+      const file = fileList[i];
+      const fileName = file.name;
+      const fileType = file.type;
+      
+      // Fayl turini tekshirish
+      if (fileType === 'application/pdf' || fileType === 'application/msword' || fileType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+        // Fayl muvaffaqiyatli qabul qilindi
+        console.log('Fayl qabul qilindi: ' + fileName);
+        // Fa   yl bilan kerakli amallarni bajarish
+        // ...
+      } else {
+        // Fayl qabul qilinmadi
+        console.log('Noto\'g\'ri fayl turi: ' + fileName);
+      }
+    }
+  });
 });

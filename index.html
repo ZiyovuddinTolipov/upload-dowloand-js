@@ -8,7 +8,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/site.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
-    <script>var inputmask_fea305f5 = { "mask": "9999" };</script>
 </head>
 
 <body>
@@ -19,12 +18,12 @@
                     data-target="#w2-collapse"><span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img
+                    <span class="icon-bar"></span></button><a class="navbar-brand" href="#"><img
                         src="images/mygov.png"></a></div>
             <div id="w2-collapse" class="collapse navbar-collapse">
                 <ul id="w3" class="navbar-nav navbar-right nav">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/site/login">Войти</a></li>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Войти</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,8 +36,8 @@
                         src="images/logo_mobile.png"></a></div>
             <div id="w4-collapse" class="collapse navbar-collapse">
                 <ul id="w5" class="navbar-nav navbar-right nav">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/site/login">Войти</a></li>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Войти</a></li>
                 </ul>
             </div>
         </nav>
@@ -81,24 +80,14 @@
 
     <footer class="footer">
         <div class>
-            <p class="pull-center">&copy; <a href="http://uzinfocom.uz/" target="_blank">UZINFOCOM</a> 2023</p>
-
-            <p class="pull-right">Работает на <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>
-            </p>
+            <p class="pull-center">&copy; <a href="#" target="_blank">UZINFOCOM</a> 2023</p>
+</p>
         </div>
     </footer>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/yii.min.js"></script>
     <script src="js/jquery.inputmask.bundle.js"></script>
-    <script src="js/yii.captcha.min.js"></script>
-    <script src="js/yii.activeForm.min.js"></script>
-    <script>jQuery(function ($) {
-            jQuery('#w0').alert();
-            jQuery("#repopinmodel-pin_code").inputmask(inputmask_fea305f5);
-            jQuery('#w1').yiiActiveForm([{ "id": "repopinmodel-pin_code", "name": "pin_code", "container": ".field-repopinmodel-pin_code", "input": "#repopinmodel-pin_code", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Необходимо заполнить «ПИН код»." }); yii.validation.string(value, messages, { "message": "Значение «ПИН код» должно быть строкой.", "max": 4, "tooLong": "Значение «ПИН код» должно содержать максимум 4 символа.", "skipOnEmpty": 1 }); } }], []);
-        });</script>
 </body>
 
 </html>

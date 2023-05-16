@@ -7,25 +7,28 @@ form.addEventListener('submit', event => {
     const keyInput = document.getElementById('repopinmodel-pin_code');
 
     fetch(`https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`)
+        .then(response => response.json())
         .then(response => {
-            console.log(response.json());
-            const contentType = response.headers.get('content-type').split('/')[1];
-            console.log(contentType);
-            if (!response.ok ) {
-                throw new Error('Ulanishda muammo');
-            } 
-            else if (response.status === 200) {
-                window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`; 
+            console.log(response);
+            if (response.success == true) {
+                window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;
                 alert('Файл загружен!!!');
-                location.reload(); 
-            } else if (response.status === 404){
-                console.log('erorr');
-                 
+                keyInput.style.borderColor = ' #ddd';
+                location.reload();
+
+            } else {
+                keyInput.value = ""
+                keyInput.classList.add('erorr');
+                keyInput.style.borderColor = 'red';
             }
+            // if (!response.ok ) {
+            //     throw new Error('Ulanishda muammo');
+            // } 
+
         }
 
         )
-    
+
         .catch(error => {
             console.error('При загрузке возникла проблема:', error);
         });

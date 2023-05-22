@@ -4,6 +4,17 @@ const controlLabel = document.querySelector('.control-label');
 const errText = document.querySelector('.err-text');
 // console.log("hello");
 
+function randomNums() {
+
+    var rand_num1 = Math.floor(Math.random() * 10) + 1;
+
+    var rand_num2 = Math.floor(Math.random() * 10) + 1;
+
+    document.getElementById("chaptcha-1").innerHTML = rand_num1;
+
+    document.getElementById("chaptcha-2").innerHTML = rand_num2;
+
+}
 
 
 form.addEventListener('submit', event => {

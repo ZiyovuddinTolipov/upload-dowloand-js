@@ -32,7 +32,9 @@ form.addEventListener('submit', event => {
 
     if (answer.value == "") {
 
-        alert("Please add the numbers");
+        // alert("Please add the numbers");
+        answer.style.borderColor = 'red';
+        answer.style.color = 'red';
 
     } else if (answer.value != sum) {
         // alert("Your math is wrong");

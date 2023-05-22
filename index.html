@@ -50,7 +50,9 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
                             Пожалуйста пройдите авторизацию чтобы система определила вас. Если документ принадлежит вам,
-                            введения ПИН кода не требуется. <a href="https://id.egov.uz/?client_id=mygove_uz_test&token_id=a1c9e6af-cbe7-4a2f-8932-9e3dd353a2cc&method=IDPW ">Нажмите здесь для авторизации</a>
+                            введения ПИН кода не требуется. <a
+                                href="https://id.egov.uz/?client_id=mygove_uz_test&token_id=a1c9e6af-cbe7-4a2f-8932-9e3dd353a2cc&method=IDPW ">Нажмите
+                                здесь для авторизации</a>
 
                         </div>
                         <h3 class="repo_qr_info">Введите PIN-код для просмотра документа</h3>
@@ -59,10 +61,25 @@
                                 <label class="control-label" for="repopinmodel-pin_code">ПИН код</label>
                                 <input type="text" id="repopinmodel-pin_code" class="form-control"
                                     name="RepoPinModel[pin_code]" autocomplete="off" aria-required="true">
-                                    <span class="err-text">Parol xato</span>
+                                <span class="err-text">Parol xato</span>
 
                                 <div class="help-block"></div>
-                            </div><button type="submit" class="btn btn-primary pull-center" id="subBtn">Открыть</button>
+                            </div>
+                            <div class="form-group field-repopinmodel-verifycode required">
+                                <label class="control-label" for="repopinmodel-verifycode">Код проверки</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon nopad"><span id="chaptcha-1">3</span>+<span
+                                            id="chaptcha-2">3</span></div>
+                                    <div class="input-group-addon btn" id="refresh-captcha"><span
+                                            class="glyphicon glyphicon-refresh"></span></div>
+                                    <input type="number" id="repopinmodel-verifycode" class="form-control"
+                                        name="RepoPinModel[verifyCode]" value=""
+                                        placeholder="Введите сумму чисел показанных в каптче" aria-required="true">
+                                </div>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-center" id="subBtn">Открыть</button>
                         </form>
                         <h3 class="repo_qr_info qr_blue">PIN-код размещается рядом с QR-кодом документа</h3>
                     </div>
@@ -78,10 +95,10 @@
     <footer class="footer">
         <div class>
             <p class="pull-center">&copy; <a href="#" target="_blank">UZINFOCOM</a> 2023</p>
-</p>
+            </p>
         </div>
     </footer>
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.inputmask.bundle.js"></script>

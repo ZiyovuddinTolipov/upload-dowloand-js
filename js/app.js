@@ -3,25 +3,27 @@ const subBtn = document.getElementById('subBtn');
 const controlLabel = document.querySelector('.control-label');
 const errText = document.querySelector('.err-text');
 // console.log("hello");
+
+
+
 form.addEventListener('submit', event => {
     event.preventDefault();
-    let answer = document.getElementById("repopinmodel-verifycode").value;
-
+    let digit2 = parseInt(document.getElementById("chaptcha-2").innerHTML);
     let digit1 = parseInt(document.getElementById("chaptcha-1").innerHTML);
 
-    let digit2 = parseInt(document.getElementById("chaptcha-2").innerHTML);
+    let answer = document.getElementById("repopinmodel-verifycode");
+    // console.log(digit1, digit2);
     
 
     const keyInput = document.getElementById('repopinmodel-pin_code');
 
     let sum = digit1 + digit2;
 
-    if (answer == "") {
+    if (answer.value == "") {
 
         alert("Please add the numbers");
 
-    } else if (answer != sum) {
-
+    } else if (answer.value != sum) {
         // alert("Your math is wrong");
         answer.style.borderColor = 'red';
         answer.style.color = 'red';
@@ -54,9 +56,7 @@ form.addEventListener('submit', event => {
                 console.error('При загрузке возникла проблема:', error);
             });
 
-        document.getElementById("status").innerHTML = "Correct, it is now safe to submit the form";
-
-        document.getElementById("answer").value = "";
+        
 
     }
 });

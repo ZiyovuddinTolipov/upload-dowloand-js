@@ -33,8 +33,7 @@ form.addEventListener('submit', event => {
     let sum = digit1 + digit2;
 
     if (answer.value == "" || keyInput.value == "") {
-
-        // alert("Please add the numbers");
+        // console.log("Please add the numbers");
         randomNums()
         keyInput.style.borderColor = 'red';
         answer.value=""
@@ -42,7 +41,7 @@ form.addEventListener('submit', event => {
         answer.style.color = 'red';
 
     } else if (answer.value != sum) {
-        // alert("Your math is wrong");
+        // console.log("Your math is wrong");
         answer.style.borderColor = 'red';
         answer.style.color = 'red';
         randomNums()
@@ -58,14 +57,14 @@ form.addEventListener('submit', event => {
             .then(response => {
                 // console.log(response);
                 if (response.headers.get('Content-Type').includes('application/json')) {
-                    console.log('Yes');
+                    // console.log('Yes');
                     keyInput.classList.add('erorr');
                     keyInput.style.borderColor = 'red';
                     controlLabel.style.color = 'red';
                     errText.style.color = 'red';
                     errText.style.display = 'inline';
                 } else {
-                    console.log('No');
+                    // console.log('No');
                     window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;
                     alert('Файл загружен!!!');
                     keyInput.style.borderColor = ' #ddd';

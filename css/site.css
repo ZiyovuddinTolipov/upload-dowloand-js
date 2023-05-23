@@ -477,6 +477,9 @@ a.desc:after {
         padding: 0 15px;
     }
 }
-.err-text {
+.err-text  , .err-text-2{
     display: none;
+}
+#repopinmodel-verifycode {
+    color: #000;
 }

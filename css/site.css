@@ -479,6 +479,7 @@ a.desc:after {
 }
 .err-text  , .err-text-2{
     display: none;
+    color: red;
 }
 #repopinmodel-verifycode {
     color: #000;

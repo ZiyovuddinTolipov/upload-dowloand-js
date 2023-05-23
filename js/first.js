@@ -1,4 +1,6 @@
 const formFirst =document.getElementById("w0");
+const errText = document.querySelector('.err-text');
+
 // alert("Please enter");
 formFirst.addEventListener('submit', event => {
     event.preventDefault();
@@ -8,6 +10,7 @@ formFirst.addEventListener('submit', event => {
         // alert("hello")
         window.location.href = "https://repository-gov-uz.vercel.app/file.html";
      } else {
-        alert("eror");
+        // alert("eror");
+        errText.style.display = 'inline';
      }
 });

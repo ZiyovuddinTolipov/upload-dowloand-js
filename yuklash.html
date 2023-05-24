@@ -31,7 +31,8 @@
         box-shadow: none;
     }
 
-    .it .form-control:focus , .it .upload:focus   {
+    .it .form-control:focus,
+    .it .upload:focus {
         border-color: #008ddb;
         box-shadow: none;
         outline: none;
@@ -80,6 +81,7 @@
         margin-bottom: 20px;
     }
 
+    /* end */
     .it .uploadDoc {
         margin-bottom: 20px;
     }
@@ -118,12 +120,14 @@
         bottom: -40px;
         text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     }
+
     .erorr {
-        border-bottom-color:  rgb(224, 13, 13);
+        border-bottom-color: rgb(224, 13, 13);
     }
-    .success {border-bottom-color:  #ddd;
+
+    .success {
+        border-bottom-color: #ddd;
     }
-  
 </style>
 
 <body>
@@ -131,7 +135,7 @@
         <div class="row it">
             <div class="col-sm-offset-1 col-sm-10" id="one">
                 <p>
-                   Malumot Turi ".doc" , ".docx" ,"pdf"
+                    Malumot Turi ".doc" , ".docx" ,"pdf"
                 </p><br>
                 <div class="row">
                     <div class="col-sm-offset-4 col-sm-4 form-group">
@@ -149,11 +153,13 @@
 
                                 <img src="./images/upload.png" class="icon">
                                 <span class="upl" id="upload">Yuklash</span>
-                                <input type="file" class="upload up" id="up"  name="text" accept=".pdf,.doc,.docx" required />
+                                <input type="file" class="upload up" id="up" name="text" accept=".pdf,.doc,.docx"
+                                    required />
                             </div><!-- btn-orange -->
                         </div><!-- col-3 -->
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="text" placeholder="kalit so'z" max="4" required>
+                            <input type="text" class="form-control" name="text" placeholder="kalit so'z" max="4"
+                                required>
                         </div>
                         <!--col-8-->
                         <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div><!-- col-1 -->
@@ -170,7 +176,7 @@
             <!--one-->
         </div><!-- row -->
     </div><!-- container -->
- <script  src="./js/upload.js"></script>
+    <script src="./js/upload.js"></script>
 </body>
 
 </html>

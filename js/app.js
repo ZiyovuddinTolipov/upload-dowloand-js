@@ -1,3 +1,4 @@
+// The END
 const form = document.getElementById('w1');
 const subBtn = document.getElementById('subBtn');
 const controlLabel = document.querySelector('.control-label');

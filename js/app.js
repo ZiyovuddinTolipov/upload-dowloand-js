@@ -64,10 +64,11 @@ form.addEventListener('submit', event => {
                     controlLabel.style.color = 'red';
                     errText.style.color = 'red';
                     errText.style.display = 'inline';
+                    randomNums()
                 } else {
                     // console.log('No');
                     window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;
-                    alert('Файл загружен!!!');
+                    confirm('Файл загружен!!!');
                     keyInput.style.borderColor = ' #ddd';
                     location.reload();
                 }

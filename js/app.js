@@ -34,7 +34,7 @@ form.addEventListener('submit', event => {
 
     let sum = digit1 + digit2;
 
-    if (answer.value == "" || keyInput.value == "") {
+    if (answer.value == "" && keyInput.value == "") {
         // console.log("Please add the numbers");
         randomNums()
         keyInput.style.borderColor = 'red';
@@ -43,9 +43,12 @@ form.addEventListener('submit', event => {
         answer.style.color = 'red';
         errTextCaptcha.style.display = 'inline';
         errText2.style.display = 'inline';
+    }else if (answer.value == "" || keyInput.value.lenght >0) {
+        errText2.style.display = 'disabled';
+        errTextCaptcha.style.display = 'inline';
 
-    } else if (answer.value != sum) {
-        // console.log("Your math is wrong");
+    //  alert("Your math is wrong");
+    }else if (answer.value != sum) {
         answer.style.borderColor = 'red';
         answer.style.color = 'red';
         randomNums()
@@ -66,6 +69,7 @@ form.addEventListener('submit', event => {
                     keyInput.style.borderColor = 'red';
                     controlLabel.style.color = 'red';
                     errText.style.color = 'red';
+                    errText2.style.display = 'disabled';
                     errText.style.display = 'inline';
                     randomNums()
                 } else {

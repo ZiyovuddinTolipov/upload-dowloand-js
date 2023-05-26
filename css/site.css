@@ -63,6 +63,7 @@ html, body {
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+    max-height: 30px !important;
 }
 
 .not-set {
@@ -464,7 +465,7 @@ a.desc:after {
         background-color: #41A84B;
         border-color: #41A84B;
         width: 100%;
-        height: 44px;
+        height: 44px ;
         font-size: 15px;
     }
     .navbar-inverse{
@@ -484,4 +485,8 @@ a.desc:after {
 }
 #repopinmodel-verifycode {
     color: #000;
+}
+.recaptcha-img {
+    font-size: 21px;
+    max-height: 30px !important;
 }

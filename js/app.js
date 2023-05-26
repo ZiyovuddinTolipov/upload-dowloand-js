@@ -33,7 +33,7 @@ form.addEventListener('submit', event => {
     const keyInput = document.getElementById('repopinmodel-pin_code');
 
     let sum = digit1 + digit2;
-
+ console.log(answer.value >=0);
     if (answer.value == "" && keyInput.value == "") {
         // console.log("Please add the numbers");
         randomNums()
@@ -43,18 +43,30 @@ form.addEventListener('submit', event => {
         answer.style.color = 'red';
         errTextCaptcha.style.display = 'inline';
         errText2.style.display = 'inline';
-    }else if (answer.value == "" || keyInput.value.lenght >0) {
+    }else if (answer.value == "" && keyInput.value >= 0) {
         errText2.style.display = 'disabled';
         errTextCaptcha.style.display = 'inline';
+        errText.style.display = 'disabled';
 
     //  alert("Your math is wrong");
-    }else if (answer.value != sum) {
+    }
+    else if (keyInput.value == "") {
+        errText2.style.display = 'inline';
+        errText.style.display = 'disabled';
+        errTextCaptcha.style.display = 'disabled';
+        
+    }else if(keyInput.value == ""){
+        errText2.style.display = 'inline';
+        errText.style.display = 'disabled';
+        randomNums()
+    }
+    else if (answer.value != sum) {
         answer.style.borderColor = 'red';
         answer.style.color = 'red';
         randomNums()
         answer.value = ""
         answer.style.color = '#000';
-
+        errTextCaptcha.style.display = 'inline';
 
     } else {
 

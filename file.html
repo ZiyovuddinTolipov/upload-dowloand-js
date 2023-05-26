@@ -8,7 +8,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/site.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./images/logo_mobile.png" type="image/png">
+<style>
+    .glyphicon  {
+        height: 20px !important;
+    }
+</style>
 </head>
 
 <body onload="randomNums();">
@@ -75,7 +81,7 @@
                                     <div class="input-group-addon nopad"><span id="chaptcha-1"></span>+<span
                                             id="chaptcha-2"></span></div>
                                     <div class="input-group-addon btn" id="refresh-captcha"><span
-                                            class="glyphicon" onclick="randomNums()"> <img src="./images/refresh.png" width="18px" alt="refresh"></span></div>
+                                            class="glyphicon" onclick="randomNums()"> <i class="fa-solid fa-arrows-rotate"></i></span></div>
                                     <input type="number" id="repopinmodel-verifycode" class="form-control"
                                         name="RepoPinModel[verifyCode]" value=""
                                         placeholder="Введите сумму чисел показанных в каптче" aria-required="true">

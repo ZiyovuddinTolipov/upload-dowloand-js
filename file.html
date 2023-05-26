@@ -70,6 +70,7 @@
                             </div>
                             <div class="form-group field-repopinmodel-verifycode required">
                                 <label class="control-label" for="repopinmodel-verifycode">Код проверки</label>
+                            
                                 <div class="input-group">
                                     <div class="input-group-addon nopad"><span id="chaptcha-1"></span>+<span
                                             id="chaptcha-2"></span></div>
@@ -78,7 +79,8 @@
                                     <input type="number" id="repopinmodel-verifycode" class="form-control"
                                         name="RepoPinModel[verifyCode]" value=""
                                         placeholder="Введите сумму чисел показанных в каптче" aria-required="true">
-                                </div>
+                                    </div>
+                                    <span class="err-text-captcha">Неправильный проверочный код.</span>
 
                                 <div class="help-block"></div>
                             </div>

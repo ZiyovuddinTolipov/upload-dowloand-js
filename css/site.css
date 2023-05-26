@@ -478,7 +478,7 @@ a.desc:after {
         padding: 0 15px;
     }
 }
-.err-text  , .err-text-2{
+.err-text  , .err-text-2 , .err-text-captcha{
     display: none;
     color: red;
 }

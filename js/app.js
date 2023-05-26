@@ -4,6 +4,7 @@ const subBtn = document.getElementById('subBtn');
 const controlLabel = document.querySelector('.control-label');
 const errText = document.querySelector('.err-text');
 const errText2 = document.querySelector('.err-text-2');
+const errTextCaptcha = document.querySelector('.err-text-captcha');
 
 // console.log("hello");
 
@@ -40,6 +41,8 @@ form.addEventListener('submit', event => {
         answer.value=""
         answer.style.borderColor = 'red';
         answer.style.color = 'red';
+        errTextCaptcha.style.display = 'inline';
+        errText2.style.display = 'inline';
 
     } else if (answer.value != sum) {
         // console.log("Your math is wrong");

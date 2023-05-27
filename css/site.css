@@ -361,8 +361,9 @@ a.desc:after {
     display: -webkit-flex;
 }
 .dflex_repo_row .vcenter img {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    backdrop-filter: blur(5px);
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+    /* backdrop-filter: blur(5px); */
+    /* height: 30px; */
 }
 @media(min-width:768px){
     .pinForm{
@@ -395,10 +396,6 @@ a.desc:after {
 }
 @media(min-width:576px) and (max-width:767px){
     .container_in .col-md-6.vcenter img{
-        margin: 25px auto 0 !important;
-        display: block !important;
-        width: 378px !important;
-        height: 600px !important;
     }
 
 }
@@ -410,10 +407,7 @@ a.desc:after {
         display: block !important;
     }
     .container_in .col-md-6.vcenter img{
-        margin: 25px auto 0 !important;
         display: block !important;
-        width:166px ;
-        height: 222px;
     }
     .container_in .row{
         display: flex !important;
@@ -489,4 +483,15 @@ a.desc:after {
 .recaptcha-img {
     font-size: 21px;
     max-height: 30px !important;
+}
+
+.chaptcha-1 {
+    background-image: url(../images/captcha/random0.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: auto;  
+    background-size: 60px auto;
+    height: 20px;
+    width: 50px;
+
 }

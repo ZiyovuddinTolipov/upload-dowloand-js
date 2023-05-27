@@ -91,6 +91,7 @@ form.addEventListener('submit', event => {
                     errText2.style.display = 'disabled';
                     errText.style.display = 'inline';
                     randomNums()
+                    alert('2')
                 } else {
                     // console.log('No');
                     keyInput.style.borderColor = ' #ddd';

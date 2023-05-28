@@ -95,31 +95,33 @@ form.addEventListener('submit', event => {
                     keyInput.classList.add('erorr');
                     keyInput.style.borderColor = 'red';
                     controlLabel.style.color = 'red';
-                    errText.style.color = 'red';
+                    // errText.style.color = 'red';
                     errText2.style.display = 'disabled';
                     errText.style.display = 'inline';
                     randomNums(myArray)
                     // alert('2')
                 } else {
+                    event.preventDefault();
                     // console.log('No');
-                    // errText.style.display = 'disabled';
-                    // errTextCaptcha.style.display = 'disabled';
-                    // errText2.style.display = 'disabled';
-                    // errText2.innerHTML= '';
-                    // errText.innerHTML= '';
-                    // errTextCaptcha.innerHTML='';
-                    // controlLabel.style.color = 'black';
+                    errText.style.display = 'disabled';
+                    errTextCaptcha.style.display = 'disabled';
+                    errText2.style.display = 'disabled';
+                    errText2.innerHTML= '';
+                    errText.innerHTML= '';
+                    errTextCaptcha.innerHTML='';
+                    controlLabel.style.color = 'black';
                     window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;
-                    confirm('Файл загружен!!!');
-                    // keyInput.style.borderColor = ' #ddd';
-                    // keyInput.value = ''
-                    // answer.value = ""
+                    // confirm('Файл загружен!!!');
+                    keyInput.style.borderColor = ' #ddd';
+                    answer.style.borderColor = ' #ddd';
+                    keyInput.value = ''
+                    answer.value = ""
                     // // randomNums();
-                    randomNums(myArray);
+                    // randomNums(myArray);
 
 
 
-                    location.reload();
+                    // location.reload();
                 }
             }
             )

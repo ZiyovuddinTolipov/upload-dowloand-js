@@ -364,6 +364,7 @@ a.desc:after {
     /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
     /* backdrop-filter: blur(5px); */
     /* height: 30px; */
+    height: 70%;
 }
 @media(min-width:768px){
     .pinForm{
@@ -396,6 +397,7 @@ a.desc:after {
 }
 @media(min-width:576px) and (max-width:767px){
     .container_in .col-md-6.vcenter img{
+        width: 70%;
     }
 
 }
@@ -408,6 +410,7 @@ a.desc:after {
     }
     .container_in .col-md-6.vcenter img{
         display: block !important;
+        width: 60%;
     }
     .container_in .row{
         display: flex !important;
@@ -475,7 +478,7 @@ a.desc:after {
 }
 .err-text  , .err-text-2 , .err-text-captcha{
     display: none;
-    color: red;
+    color: #a94442;
 }
 #repopinmodel-verifycode {
     color: #000;

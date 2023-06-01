@@ -397,7 +397,8 @@ a.desc:after {
 }
 @media(min-width:576px) and (max-width:767px){
     .container_in .col-md-6.vcenter img{
-        width: 70%;
+        width: 166px;
+        height: 222px;
     }
 
 }
@@ -494,8 +495,8 @@ a.desc:after {
 
 .chaptcha-1 {
     background-image: url(../images/captcha/random0.png);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center; 
+    background-repeat: no-repeat; 
     background-size: auto;  
     background-size: 60px auto;
     height: 20px;

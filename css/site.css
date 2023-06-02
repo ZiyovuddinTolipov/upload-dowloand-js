@@ -480,6 +480,18 @@ a.desc:after {
         height: 30px;
         width: 25px;
     }
+    .chaptcha-1  {
+        width: 166px;
+        height: 222px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:none;
+        margin: 0;
+    background-size: 50% 50%;
+
+
+    }
 }
 .err-text  , .err-text-2 , .err-text-captcha{
     display: none;
@@ -497,9 +509,9 @@ a.desc:after {
     background-image: url(../images/captcha/random0.png);
     background-position: center; 
     background-repeat: no-repeat; 
-    background-size: auto;  
-    background-size: 60px auto;
-    height: 20px;
-    width: 50px;
+    background-size: contain;  
+    /* background-size: 60px auto; */
+    /* height: 20px;
+    width: 50px; */
 
 }

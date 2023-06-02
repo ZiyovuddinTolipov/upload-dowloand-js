@@ -10,6 +10,16 @@ html, body {
     margin: 0 auto -60px;
     padding: 0 0 60px;
 }
+.chaptcha-1 {
+    background-image: url(../images/captcha/random0.png);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: contain;  
+    background-size: 60px auto;
+    height: 20px;
+    width: 50px;
+
+}
 
 .wrap > .container {
     padding: 70px 15px 20px;
@@ -261,6 +271,7 @@ a.desc:after {
     color: #333333;
     padding-bottom: 8px;
     padding-top: 12px;
+    
 }
 .import i{
     margin: 0 0 0 10px;
@@ -503,15 +514,4 @@ a.desc:after {
 .recaptcha-img {
     font-size: 21px;
     max-height: 30px !important;
-}
-
-.chaptcha-1 {
-    background-image: url(../images/captcha/random0.png);
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: contain;  
-    /* background-size: 60px auto; */
-    /* height: 20px;
-    width: 50px; */
-
 }

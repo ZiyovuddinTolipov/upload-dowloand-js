@@ -498,14 +498,15 @@ a.desc:after {
         width: 25px;
     }
     .chaptcha-1  {
-        width: 166px;
-        height: 222px;
+        background-size: 40% 30%;
+        width: 424px !important;
+        height: 262px;
         display: flex;
         justify-content: center;
         align-items: center;
         border:none;
         margin: 0;
-    background-size: 50% 50%;
+        padding: 0 30px;
     }
     .input-group{
         display: flex;
@@ -513,7 +514,7 @@ a.desc:after {
         justify-content: center;
     }   
     #refresh-captcha {
-        height: 222px;
+        height: 262px;
         padding: 20px 10px;
         width: 40px;
         display: flex;

@@ -21,6 +21,7 @@ html, body {
 
 }
 
+
 .wrap > .container {
     padding: 70px 15px 20px;
 }
@@ -500,8 +501,19 @@ a.desc:after {
         border:none;
         margin: 0;
     background-size: 50% 50%;
-
-
+    }
+    .input-group{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }   
+    #refresh-captcha {
+        height: 222px;
+        padding: 20px 10px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
     }
 }
 .err-text  , .err-text-2 , .err-text-captcha{

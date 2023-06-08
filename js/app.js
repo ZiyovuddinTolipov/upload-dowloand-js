@@ -31,7 +31,7 @@ function randomNums(myArr) {
     chaptchaImg.style.backgroundImage = `url('${randomValue1.valueURL}')`
     console.log(randomValue1, 'randomValue');
     // location.reload()
-    // return randomValue;
+    return randomValue1;
 };
 randomNums(myArray);
 // console.log(randomValue1, 'randomValue');
@@ -108,9 +108,9 @@ form.addEventListener('submit', event => {
                     errText.style.display = 'disabled';
                     errTextCaptcha.style.display = 'disabled';
                     errText2.style.display = 'disabled';
-                    errText2.innerHTML= '';
-                    errText.innerHTML= '';
-                    errTextCaptcha.innerHTML='';
+                    errText2.innerHTML = '';
+                    errText.innerHTML = '';
+                    errTextCaptcha.innerHTML = '';
                     controlLabel.style.color = 'black';
                     window.location.href = `https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`;
                     // confirm('Файл загружен!!!');

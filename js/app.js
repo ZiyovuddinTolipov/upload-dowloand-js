@@ -34,11 +34,6 @@ function randomNums(myArr) {
     return randomValue1;
 };
 randomNums(myArray);
-// console.log(randomValue1, 'randomValue');
-// const data = randomNums();
-
-// console.log(randomIndex)
-// console.log(data, 'hi');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -48,7 +43,6 @@ form.addEventListener('submit', event => {
 
     console.log(answer.value >= 0);
     if (answer.value == "" && keyInput.value == "") {
-        // console.log("Please add the numbers");
         randomNums(myArray)
         keyInput.style.borderColor = 'red';
         answer.value = ""
@@ -87,7 +81,6 @@ form.addEventListener('submit', event => {
         subBtn.disabled = false;
     } else {
 
-        // all good now! //
         fetch(`https://onlinemarketshop.pythonanywhere.com/doc/${keyInput.value}`)
             // .then(response => response)
             .then(response => {
@@ -119,7 +112,6 @@ form.addEventListener('submit', event => {
                     keyInput.value = '';
                     answer.value = "";
                     subBtn.disabled = false;
-                    // // randomNums();
                     // randomNums(myArray);
 
 

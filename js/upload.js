@@ -40,11 +40,9 @@ let span = document.getElementById('upload');
 // Fires on file upload
 fileInputName.addEventListener('change', function (event) {
 
-  // Get file name
   let fileName = fileInputName.files[0].name.slice(0, 10);
-  console.log(fileName);
+  // console.log(fileName)
 
-  // Update file name in span
   span.innerText = fileName;
 
 
@@ -57,14 +55,9 @@ fileInputName.addEventListener('change', function (event) {
       const fileName = file.name;
       const fileType = file.type;
 
-      // Fayl turini tekshirish
       if (fileType === 'application/pdf' || fileType === 'application/msword' || fileType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-        // Fayl muvaffaqiyatli qabul qilindi
         console.log('Fayl qabul qilindi: ' + fileName);
-        // Fa   yl bilan kerakli amallarni bajarish
-        // ...
       } else {
-        // Fayl qabul qilinmadi
         console.log('Noto\'g\'ri fayl turi: ' + fileName);
       }
     }
